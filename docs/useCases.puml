@@ -4,6 +4,7 @@ left to right direction
 ' Actors
 actor "Utilisateur non connecté" as Guest
 actor "Utilisateur connecté" as User
+actor "Client" as Client
 
 package System{
     ' use cases
@@ -18,9 +19,6 @@ package System{
     usecase "Passer commande" as UC7
 
     usecase "Consulter la liste de clients" as UC9
-    usecase "Ajouter client" as UC10
-    usecase "Supprimer un client" as UC11
-
     usecase "Associer commande à un client" as UC8
 
     ' Guest to cases
@@ -32,13 +30,19 @@ package System{
     ' users to cases
     User -- UC1
     User -- UC5
-    User -- UC8
     User -- UC9
 
     ' cases to cases
     UC5 --> UC6
     UC5 --> UC7
-    UC9 --> UC11
-    UC9 --> UC10
+    UC7 --> UC8
+
+    ' heritage
+    User --|> Client
+
+    ' Client note
+    note right of UC8
+      Client global : récupéré si email existe, sinon créé.
+    end note
 }
 @enduml
