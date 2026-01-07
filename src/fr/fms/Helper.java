@@ -14,7 +14,7 @@ public class Helper {
 				
 				//if negative not available and user insert a negative : error
 				if(!negative && chosenEntreeI < 0) {
-					throw new Exception("Numero negatif non autorisé");
+					throw new IllegalArgumentException("Numero negatif non autorisé");
 				}
 				return chosenEntreeI;
 			}
@@ -29,7 +29,6 @@ public class Helper {
 			catch(Exception e) {
 				System.out.println("[Erreur] "+e.getMessage());
 			}
-			
 		}
 	}
 	
