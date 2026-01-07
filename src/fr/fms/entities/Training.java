@@ -9,6 +9,7 @@ public class Training {
 	private double price;
 	
 	
+	//getters setters for id
 	public int getId() {
 		return id;
 	}
@@ -17,6 +18,7 @@ public class Training {
 	}
 	
 	
+	//getters setters for name
 	public String getName() {
 		return name;
 	}
@@ -25,6 +27,7 @@ public class Training {
 	}
 	
 	
+	//getters setters for summary
 	public String getSummary() {
 		return summary;
 	}
@@ -33,6 +36,7 @@ public class Training {
 	}
 	
 	
+	//getters setters for isInPerson
 	public boolean isInPerson() {
 		return isInPerson;
 	}
@@ -41,6 +45,7 @@ public class Training {
 	}
 	
 	
+	//getters setters for isRemotely
 	public boolean isRemotely() {
 		return isRemotely;
 	}
@@ -49,6 +54,7 @@ public class Training {
 	}
 	
 	
+	//getters setters for getPrice 
 	public double getPrice() {
 		return price;
 	}
