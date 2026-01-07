@@ -45,7 +45,18 @@ public class Helper {
 		}
 	}
 	
-	
+	/**
+	 * Repeats the given string a specified number of times.
+	 * <p>
+	 * Uses StringBuilder for memory efficiency instead of concatenating strings in a loop.
+	 * Throws IllegalArgumentException if nOfTimes is less than 1.
+	 * </p>
+	 *
+	 * @param s The string to be repeated
+	 * @param nOfTimes The number of times to repeat the string (must be >= 1)
+	 * @return A new string containing the original string repeated nOfTimes
+	 * @throws IllegalArgumentException if nOfTimes < 1
+	 */
 	public static String repeatString(String s, int nOfTimes) {
 	    if (nOfTimes < 1) {
 	        throw new IllegalArgumentException("The number of times to repeat must be >= 1");
