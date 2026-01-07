@@ -8,4 +8,54 @@ public class Training {
 	private boolean isRemotely;
 	private double price;
 	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+	public String getSummary() {
+		return summary;
+	}
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
+	
+	
+	public boolean isInPerson() {
+		return isInPerson;
+	}
+	public void setInPerson(boolean isInPerson) {
+		this.isInPerson = isInPerson;
+	}
+	
+	
+	public boolean isRemotely() {
+		return isRemotely;
+	}
+	public void setRemotely(boolean isRemotely) {
+		this.isRemotely = isRemotely;
+	}
+	
+	
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	
+	
 }
