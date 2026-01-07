@@ -8,7 +8,21 @@ public class Training {
 	private boolean isInPerson;
 	private boolean isRemotely;
 	private double price;
-	
+
+
+	public Training(){}
+
+
+	public Training(int id, String name, String summary, int duration, boolean isInPerson, boolean isRemotely, double price) {
+		this.id = id;
+		this.name = name;
+		this.summary = summary;
+		this.duration = duration;
+		this.isInPerson = isInPerson;
+		this.isRemotely = isRemotely;
+		this.price = price;
+	}
+
 	
 	//getters setters for id
 	public int getId() {
