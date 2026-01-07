@@ -12,6 +12,10 @@ public class Helper {
 				int chosenEntreeI = scanner.nextInt();
 				System.out.println();	
 				
+				//if negative not available and user insert a negative : error
+				if(!negative && chosenEntreeI < 0) {
+					throw new Exception("Numero negatif non autorisé");
+				}
 				return chosenEntreeI;
 			}
 			//catch errors
