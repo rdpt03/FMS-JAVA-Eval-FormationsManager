@@ -8,13 +8,13 @@ public abstract class DAO {
 
     protected Connection conn;
 
-    private final String url = "jdbc:mysql://localhost:3306/VenteFormations";
-    private final String user = "Vente123";
+    private final String url = "jdbc:mysql://localhost:3306/formationsvente";
+    private final String user = "formationsvente";
     private final String password = "Vente123";
 
     public DAO() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver"); // driver JDBC
+            Class.forName("org.mariadb.jdbc.Driver"); // driver JDBC
             this.conn = DriverManager.getConnection(url, user, password);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
