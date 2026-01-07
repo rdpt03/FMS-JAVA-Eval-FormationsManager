@@ -57,6 +57,9 @@ public class Training {
 		if(price < 0) {
 			price = 0;
 		}
+		
+		//round if put fore than 2 decimals and set
+		this.price = (double) Math.round(price * 100) / 100;
 	}
 	
 	
