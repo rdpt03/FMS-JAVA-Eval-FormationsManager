@@ -53,7 +53,10 @@ public class Training {
 		return price;
 	}
 	public void setPrice(double price) {
-		this.price = price;
+		//if the price is negative put it free
+		if(price < 0) {
+			price = 0;
+		}
 	}
 	
 	
