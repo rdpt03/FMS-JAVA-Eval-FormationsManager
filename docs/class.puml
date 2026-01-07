@@ -1,0 +1,51 @@
+@startuml
+'https://plantuml.com/class-diagram
+left to right direction
+
+
+
+class Order #LightBlue{
+    -int : order_id
+    -date : order_date
+}
+
+class User #LightBlue{
+    -int : user_id
+    -str : username
+    -str : password
+}
+
+class Client #LightBlue{
+    -int : client_id
+    -str : first_name
+    -str : last_name
+    -str : email
+    -str : address
+    -str : phone_num
+}
+
+class Training #LightBlue{
+    -int : id_training
+    -str : name
+    -str : summary
+    -int : duration
+    -bool : is_in_person
+    -bool : is_remotely
+    -float : price
+}
+
+class Cart #LightBlue{
+    -int : cart_id
+}
+
+User "1" -- "1" Cart
+Cart "*" -- "*" Training
+
+User --|> Client
+
+
+Order "*"--"1" User
+Order "*"--"1" Client
+Order "*"--"*" Training
+
+@enduml
