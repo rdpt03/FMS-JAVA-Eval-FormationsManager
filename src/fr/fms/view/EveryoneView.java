@@ -38,6 +38,11 @@ public class EveryoneView {
 					}
 					break;
 				case 4:
+					for(Training t : trainingList){
+						if(t.isRemotely()) {
+							System.out.println(t.btShow());
+						}
+					}
 					break;
 				case 5:
 					System.out.println("À bientot!");
