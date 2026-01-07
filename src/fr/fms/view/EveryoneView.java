@@ -24,6 +24,9 @@ public class EveryoneView {
 			//handle
 			switch (option) {
 				case 1:
+					for(Training t : trainingList){
+						System.out.println(t.btShow());
+					}
 					break;
 				case 2:
 					break;
