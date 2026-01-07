@@ -109,5 +109,20 @@ public class Training {
 				'}';
 	}
 
-	
+
+	public String btShow() {
+		String stringTraining = this.id +
+				" | " + this.name +
+				" | " + this.summary +
+				" | " + this.duration + " jours"+
+				" | " + this.price + "€";
+
+		if(this.isInPerson){
+			stringTraining += " | en presentiel";
+		}
+		if(this.isRemotely){
+			stringTraining += " | en distanciel";
+		}
+		return stringTraining;
+	}
 }
