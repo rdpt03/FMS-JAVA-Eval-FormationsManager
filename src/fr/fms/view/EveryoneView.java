@@ -31,7 +31,11 @@ public class EveryoneView {
 				case 2:
 					break;
 				case 3:
-					break;
+					for(Training t : trainingList){
+						if(t.isInPerson()) {
+							System.out.println(t.btShow());
+						}
+					}
 				case 4:
 					break;
 				case 5:
