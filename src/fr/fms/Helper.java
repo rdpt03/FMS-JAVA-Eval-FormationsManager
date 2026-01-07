@@ -46,5 +46,20 @@ public class Helper {
 	}
 	
 	
+	public static String repeatString(String s, int nOfTimes) {
+	    if (nOfTimes < 1) {
+	        throw new IllegalArgumentException("The number of times to repeat must be >= 1");
+	    }
+
+	    // Use StringBuilder for memory-efficient string concatenation
+	    StringBuilder sb = new StringBuilder(s.length() * nOfTimes);
+	    
+	    for (int i = 0; i < nOfTimes; i++) {
+	        sb.append(s); // append original string each iteration
+	    }
+
+	    return sb.toString(); // convert to String and return
+	}
+	
 
 }
