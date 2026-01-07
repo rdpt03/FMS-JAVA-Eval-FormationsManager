@@ -32,6 +32,7 @@ public class EveryoneView {
 				case 4:
 					break;
 				case 5:
+					System.out.println("À bientot!");
 					mainMenuRunning = false;
 					break;
 				default:
