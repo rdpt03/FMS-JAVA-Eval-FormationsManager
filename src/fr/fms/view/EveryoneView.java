@@ -36,6 +36,7 @@ public class EveryoneView {
 							System.out.println(t.btShow());
 						}
 					}
+					break;
 				case 4:
 					break;
 				case 5:
