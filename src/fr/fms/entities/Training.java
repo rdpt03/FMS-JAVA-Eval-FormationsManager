@@ -94,7 +94,20 @@ public class Training {
 		//round if put fore than 2 decimals and set
 		this.price = (double) Math.round(price * 100) / 100;
 	}
-	
-	
+
+
+	@Override
+	public String toString() {
+		return "Training{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", summary='" + summary + '\'' +
+				", duration=" + duration +
+				", isInPerson=" + isInPerson +
+				", isRemotely=" + isRemotely +
+				", price=" + price +
+				'}';
+	}
+
 	
 }
