@@ -1,0 +1,42 @@
+@startuml
+title Sequence - Place order (User = Client)
+
+actor User
+participant "Cart" as Cart
+participant "Order" as Order
+participant "Training" as Training
+participant "Client" as ClientDB
+
+' User add/remove trainings
+User -> Cart : add Trainings
+User -> Cart : remove Trainings (optional)
+
+' User Place order
+User -> Order : Place order
+
+' Check if the email exists
+Order -> ClientDB : Check Email
+alt client exists
+    ClientDB --> Order : return existing client
+    note right
+        Use existing client
+    end note
+else Client doesn't exist
+    Order -> ClientDB : create new client
+    ClientDB --> Order : client created
+    note right
+        enter first name, last name, address, phone number
+    end note
+end
+
+' Associate trainings to orders
+Order -> Training : add trainings to order
+Order --> User : confirm order
+
+' Clean the cart
+User -> Cart : clean cart
+note right
+    Cart empty after order
+end note
+
+@enduml
