@@ -4,6 +4,7 @@ public class Training {
 	private int id;
 	private String name;
 	private String summary;
+	private int duration;
 	private boolean isInPerson;
 	private boolean isRemotely;
 	private double price;
@@ -36,6 +37,18 @@ public class Training {
 	}
 	
 	
+	//getters setters for duration
+	public int getDuration() {
+		return duration;
+	}
+	public void setDuration(int duration) {
+		if(duration < 1) {
+			duration = 1;
+		}
+		this.duration = duration;
+	}
+
+
 	//getters setters for isInPerson
 	public boolean isInPerson() {
 		return isInPerson;
