@@ -4,10 +4,11 @@ import java.util.List;
 import java.util.Scanner;
 
 import fr.fms.Helper;
+import fr.fms.daos.TrainingDAO;
 import fr.fms.entities.Training;
 
 public class EveryoneView {
-	public static void mainMenu(Scanner sc, List<Training> trainingList) {
+	public static void mainMenu(Scanner sc, TrainingDAO trainingDao) {
 		boolean mainMenuRunning = true;
 		while(mainMenuRunning) {
 			System.out.println(Helper.repeatString("-", 30));
@@ -23,27 +24,32 @@ public class EveryoneView {
 
 			//handle
 			switch (option) {
+				/*Option 1 : print all */
 				case 1:
-					for(Training t : trainingList){
+					for(Training t : trainingDao.getAllTrainings()){
 						System.out.println(t.btShow());
 					}
 					break;
+				/*Option 2 : filter by word */
 				case 2:
 					break;
 				case 3:
-					for(Training t : trainingList){
+				/*Option 3 : print only insite */
+					for(Training t : trainingDao.getAllTrainings()){
 						if(t.isInPerson()) {
 							System.out.println(t.btShow());
 						}
 					}
 					break;
+				/*Option 4 : print only remote */
 				case 4:
-					for(Training t : trainingList){
+					for(Training t : trainingDao.getAllTrainings()){
 						if(t.isRemotely()) {
 							System.out.println(t.btShow());
 						}
 					}
 					break;
+				/*Option 4 : exit*/
 				case 5:
 					System.out.println("À bientot!");
 					mainMenuRunning = false;

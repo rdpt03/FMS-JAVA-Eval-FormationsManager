@@ -12,13 +12,12 @@ public class RunApp {
 		// TODO Auto-generated method stub
 		
 		//get trainings from the DB
-		TrainingDAO trainingDao = new TrainingDAO(); 
-		List<Training> trainingList = trainingDao.getAllTrainings();
+		TrainingDAO trainingDao = new TrainingDAO();
 
 		//create scanner
 		Scanner sc = new Scanner(System.in);
 		//call main view
-		EveryoneView.mainMenu(sc, trainingList);
+		EveryoneView.mainMenu(sc, trainingDao);
 	}
 
 }
