@@ -40,6 +40,37 @@ public class TrainingDAO extends DAO {
         return trainings;
     }
 
+    public List<Training> getTrainingsByKeyword(String keyword) {
+        List<Training> trainings = new ArrayList<>();
+        String sql = "SELECT * " +
+                "FROM f_training " +
+                "WHERE t_name LIKE ? " +
+                "   OR t_summary LIKE ? " +
+                "   OR t_duration LIKE ? " +
+                "   OR t_is_in_person LIKE ? " +
+                "   OR t_is_remotely LIKE ? " +
+                "   OR t_price LIKE ?";
+
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            // put into 6 params
+
+            for (int i = 1; i <= 6; i++) {
+                stmt.setString(i, "%" + keyword + "%");
+            }
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                trainings.add(mapResultSetToTraining(rs));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // log SQL exceptions
+        }
+
+        return trainings;
+    }
+
     /**
      * Maps a ResultSet row to a Training object
      * @param rs ResultSet from executed query
