@@ -23,6 +23,7 @@ public class Helper {
 			try {
 				//get the number
 				int chosenEntreeI = scanner.nextInt();
+				scanner.nextLine(); //ligne pour consommer le \n
 				System.out.println();	
 				
 				//if negative not available and user insert a negative : error
@@ -71,6 +72,6 @@ public class Helper {
 
 	    return sb.toString(); // convert to String and return
 	}
-	
+
 
 }
