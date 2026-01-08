@@ -28,8 +28,16 @@ Each training has the following attributes:
 ----------
 
 ## Installation & Usage
+**Database :**
+1. **Open mariadb**
 
-1.  **Clone the repository**
+2. **Execute the scripts (don't forget to modify password)**
+
+3. **Insert the database credentials into `src/fr/fms/daos/DAO.java`**
+
+**Code :**
+ 
+1**Clone the repository**
 
     `git clone https://github.com/rdpt03/FMS-JAVA-Eval-FormationsManager.gitcd FMS-JAVA-Eval-FormationsManager`
 
