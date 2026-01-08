@@ -111,18 +111,21 @@ public class Training {
 
 
 	public String btShow() {
-		String stringTraining = this.id +
-				" | " + this.name +
-				" | " + this.summary +
-				" | " + this.duration + " jours"+
-				" | " + this.price + "€";
+		//adapt format
+		String format = "%-3s | %-15s | %-30s | %-10s | %-8s | %-15s | %-15s";
 
-		if(this.isInPerson){
-			stringTraining += " | en presentiel";
-		}
-		if(this.isRemotely){
-			stringTraining += " | en distanciel";
-		}
-		return stringTraining;
+		//bools
+		String inPerson = isInPerson ? "en presentiel" : "";
+		String remotely = isRemotely ? "en distanciel" : "";
+
+		//return
+		return String.format(format,
+				id,
+				name,
+				summary,
+				duration + " jours",
+				price + "€",
+				inPerson,
+				remotely);
 	}
 }
