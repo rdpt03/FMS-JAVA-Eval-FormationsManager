@@ -20,7 +20,7 @@ public class EveryoneView {
 			System.out.println(Helper.repeatString("-", 30));
 
 			//choose
-			int option = Helper.askInt(sc, "Choisir une option", true);
+			int option = Helper.askInt(sc, "Choisir une option", false);
 
 			//handle
 			switch (option) {

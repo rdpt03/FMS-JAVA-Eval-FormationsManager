@@ -1,5 +1,8 @@
 package fr.fms;
 
+import fr.fms.exceptions.NegativeNumberNotAllowedError;
+import fr.fms.exceptions.NonValidNumberError;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -14,7 +17,7 @@ public class Helper {
 	 *
 	 * @param scanner The Scanner object used to read user input from the console.
 	 * @param question The message/question to display to the user before input.
-	 * @param allowNegative If true, negative integers are allowed; if false, negative integers will trigger an error.
+	 * @param negative If true, negative integers are allowed; if false, negative integers will trigger an error.
 	 * @return The integer entered by the user that satisfies the constraints.
 	 */
 	public static int askInt(Scanner scanner, String question, boolean negative) {
@@ -22,23 +25,29 @@ public class Helper {
 			System.out.print(question+" : ");
 			try {
 				//get the number
+				if (!scanner.hasNextInt()) {
+					throw new NonValidNumberError();
+				}
 				int chosenEntreeI = scanner.nextInt();
 				scanner.nextLine(); //ligne pour consommer le \n
 				System.out.println();	
 				
 				//if negative not available and user insert a negative : error
 				if(!negative && chosenEntreeI < 0) {
-					throw new IllegalArgumentException("Numero negatif non autorisé");
+					throw new NegativeNumberNotAllowedError();
 				}
 				return chosenEntreeI;
 			}
 			//catch errors
 			//not a number
-			catch(InputMismatchException e) {
-				System.out.println("[Erreur] Numero non valide");
-				//spend the scanner token
-				scanner.next();
+			catch (NonValidNumberError e) {
+				System.out.println("[Erreur] " + e.getMessage());
+				scanner.nextLine(); // consum invalid token (ex: "abc")
 			}
+			catch (NegativeNumberNotAllowedError e) {
+				System.out.println("[Erreur] " + e.getMessage());
+			}
+
 			//unknown error
 			catch(Exception e) {
 				System.out.println("[Erreur] "+e.getMessage());
