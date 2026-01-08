@@ -32,8 +32,9 @@ public class EveryoneView {
 					break;
 				/*Option 2 : filter by word */
 				case 2:
-					System.out.println("Inserer le mot clé pour effectuer une recherche");
-					for(Training t : trainingDao.getTrainingsByKeyword(sc.nextLine())){
+					System.out.println("Inserer le mot clé pour effectuer une recherche : ");
+					String keyword = sc.nextLine();
+					for(Training t : trainingDao.getTrainingsByKeyword(keyword)){
 						System.out.println(t.btShow());
 					}
 					break;
