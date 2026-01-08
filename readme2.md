@@ -39,7 +39,8 @@ Each training has the following attributes:
  
 1**Clone the repository**
 
-    `git clone https://github.com/rdpt03/FMS-JAVA-Eval-FormationsManager.gitcd FMS-JAVA-Eval-FormationsManager`
+    `git clone https://github.com/rdpt03/FMS-JAVA-Eval-FormationsManager.git`
+    `cd FMS-JAVA-Eval-FormationsManager`
 
 2.  **Compile the Java source code**
     `javac -d bin src/fr/fms/**/*.java`
