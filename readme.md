@@ -31,15 +31,16 @@ Each training has the following attributes:
 
 1.  **Clone the repository**
 
-    `git clone https://github.com/rdpt03/FMS-JAVA-Eval-FormationsManager.gitcd FMS-JAVA-Eval-FormationsManager`
+    `git clone https://github.com/rdpt03/FMS-JAVA-Eval-FormationsManager.git`
+    `cd FMS-JAVA-Eval-FormationsManager`
 
-2.  **Compile the Java source code**
+3.  **Compile the Java source code**
     `javac -d bin src/fr/fms/**/*.java`
 
-3.  **Run the main menu**
+4.  **Run the main menu**
     `java -cp bin fr.fms.view.EveryoneView`
 
-4.  **Follow the console prompts** to view or filter trainings.
+5.  **Follow the console prompts** to view or filter trainings.
 ----------
 ## Future Development (Part 2)
 The second part of the exercise involves:
