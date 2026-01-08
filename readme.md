@@ -37,7 +37,7 @@ Each training has the following attributes:
     `javac -d bin src/fr/fms/**/*.java`
 
 3.  **Run the main menu**
-    `java -cp bin fr.fms.view.EveryoneView`
+    `java -cp bin fr.fms.RunApp`
 
 4.  **Follow the console prompts** to view or filter trainings.
 ----------
