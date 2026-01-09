@@ -4,7 +4,6 @@ left to right direction
 ' Actors
 actor "Utilisateur non connecté" as Guest
 actor "Utilisateur connecté" as User
-actor "Client" as Client
 
 package System{
     ' use cases
@@ -23,8 +22,8 @@ package System{
 
     ' Guest to cases
     Guest -- UC1
-    UC1 --> UC2
-    UC1 --> UC3
+    UC1 ..> UC2 : <<extend>>
+    UC1 ..> UC3 : <<extend>>
     Guest -- UC4
 
     ' users to cases
@@ -33,12 +32,9 @@ package System{
     User -- UC9
 
     ' cases to cases
-    UC5 --> UC6
-    UC5 --> UC7
-    UC7 --> UC8
-
-    ' heritage
-    User --|> Client
+    UC5 ..> UC6 : <<extend>>
+    UC5 ..> UC7 : <<extend>>
+    UC7 ..> UC8 : <<extend>>
 
     ' Client note
     note right of UC8

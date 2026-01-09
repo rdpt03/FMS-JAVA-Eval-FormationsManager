@@ -41,7 +41,6 @@ class Cart #LightBlue{
 User "1" -- "1" Cart
 Cart "*" -- "*" Training
 
-User --|> Client
 
 
 Order "*"--"1" User
