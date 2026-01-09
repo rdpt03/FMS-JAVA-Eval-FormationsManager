@@ -4,39 +4,45 @@ title Sequence - Place order (User = Client)
 actor User
 participant "Cart" as Cart
 participant "Order" as Order
-participant "Training" as Training
 participant "Client" as ClientDB
 
 ' User add/remove trainings
-User -> Cart : add Trainings
-User -> Cart : remove Trainings (optional)
+Activate Cart
+User -> Cart : addTraining(training)
+User <-- Cart : training added
+opt Remove trainings
+    User -> Cart : removeTrainings()
+    User <-- Cart : training removed
+end
 
 ' User Place order
-User -> Order : Place order
+User -> Cart : placeOrder()
+Cart -> Order : createOrder()
+Activate Order
 
 ' Check if the email exists
-Order -> ClientDB : Check Email
+Order -> ClientDB : checkEmail(email)
+Activate ClientDB
 alt client exists
     ClientDB --> Order : return existing client
-    note right
-        Use existing client
-    end note
+
 else Client doesn't exist
-    Order -> ClientDB : create new client
-    ClientDB --> Order : client created
+    ClientDB -> ClientDB : createClient(email)
+    ClientDB --> Order : return client created
     note right
         enter first name, last name, address, phone number
     end note
 end
+Deactivate ClientDB
 
 ' Associate trainings to orders
-Order -> Training : add trainings to order
-Order --> User : confirm order
 
+Order --> User : confirm order
+Deactivate Order
 ' Clean the cart
-User -> Cart : clean cart
-note right
-    Cart empty after order
-end note
+Cart -> Cart : emptyCart()
+Cart --> Cart : cart emptied
+Deactivate Cart
+
 
 @enduml
