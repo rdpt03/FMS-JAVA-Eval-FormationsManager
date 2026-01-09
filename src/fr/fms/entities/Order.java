@@ -21,4 +21,43 @@ public class Order {
         this.client = client;
         this.listOfTrainings = listOfTrainings;
     }
+
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    public Date getDate() {
+        return date;
+    }
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+
+    public User getUser() {
+        return user;
+    }
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+
+    public Client getClient() {
+        return client;
+    }
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+
+    public List<Training> getListOfTrainings() {
+        return listOfTrainings;
+    }
+    public void setListOfTrainings(List<Training> listOfTrainings) {
+        this.listOfTrainings = listOfTrainings;
+    }
 }
