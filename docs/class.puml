@@ -35,7 +35,9 @@ class Training #LightBlue{
 }
 
 User "*" -- "*" Training
-
+note on link
+  Represented in service layer and localStorage
+end note
 
 
 Order "*"--"1" User
