@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public abstract class DAO {
+public abstract class GeneralDAO {
 
     protected Connection conn;
 
@@ -12,7 +12,7 @@ public abstract class DAO {
     private final String user = "formationsvente";
     private final String password = "Vente123";
 
-    public DAO() {
+    public GeneralDAO() {
         try {
             Class.forName("org.mariadb.jdbc.Driver"); // driver JDBC
             this.conn = DriverManager.getConnection(url, user, password);

@@ -10,7 +10,7 @@ import java.util.List;
  * Handles read operations from f_training table.
  * Inherits connection from abstract DAO class.
  */
-public class TrainingDAO extends DAO {
+public class TrainingDAO extends GeneralDAO {
 
     // Constructor opens the connection via DAO
     public TrainingDAO() {
