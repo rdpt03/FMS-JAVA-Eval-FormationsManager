@@ -34,12 +34,7 @@ class Training #LightBlue{
     -float : price
 }
 
-class Cart #LightBlue{
-    -int : cart_id
-}
-
-User "1" -- "1" Cart
-Cart "*" -- "*" Training
+User "*" -- "*" Training
 
 
 
