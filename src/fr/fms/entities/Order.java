@@ -60,4 +60,16 @@ public class Order {
     public void setListOfTrainings(List<Training> listOfTrainings) {
         this.listOfTrainings = listOfTrainings;
     }
+
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", date=" + date +
+                ", user=" + user +
+                ", client=" + client +
+                ", listOfTrainings=" + listOfTrainings +
+                '}';
+    }
 }

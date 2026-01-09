@@ -77,4 +77,18 @@ public class Client {
     public void setListOfOrders(List<Order> listOfOrders) {
         this.listOfOrders = listOfOrders;
     }
+
+    
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", listOfOrders=" + listOfOrders +
+                '}';
+    }
 }
